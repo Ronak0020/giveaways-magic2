@@ -159,4 +159,4 @@ exports.voice_connection = function() {
   return voice_connection;
 }
 
-bot.login(process.env.token);
+bot.login('NjM3NjExMDE0MzAwMzY4ODk2.XbaraQ.nYN9Lic6bJMiswSGn9tWpGKspLE');
