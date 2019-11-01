@@ -17,9 +17,6 @@ bot.on('ready', () => {
   require('./init_commands.js').init();
   logger.info("Logged in! Serving in " + bot.guilds.array().length + " servers");
   logger.info(config.prefix + "help to view a list of commands");
-  bot.user.setActivity('Giveaways Magic', { type: 'WATCHING' })
-  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'Giveaways Magic'}`))
-  .catch(console.error);
  });
 
 antispam(bot);
