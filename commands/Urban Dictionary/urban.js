@@ -5,7 +5,7 @@ exports.commands = [
 var urban = require("urban");
 
 exports.urban = {
-			usage: ".urban",
+			usage: "",
 			description: "looks up a random word on Urban Dictionary",
 			process: function(bot,msg,suffix){
 					var targetWord = suffix == "" ? urban.random() : urban(suffix);
