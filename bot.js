@@ -14,6 +14,7 @@ var logger = log4js.getLogger();
 logger.level = 'debug';
 
 bot.on('ready', () => {
+  bot.user.setActivity('Giveaways Magic', {type: 'WATCHING'});
   require('./init_commands.js').init();
   logger.info("Logged in! Serving in " + bot.guilds.array().length + " servers");
   logger.info(config.prefix + "help to view a list of commands");
