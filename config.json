@@ -12,7 +12,7 @@
 
   "welcome": {
       "enabled": true,
-      "message": "Welcome {user} to {server} :smile:",
+      "message": ":tada: Welcome ***{user}*** to ***{server}*** :tada:",
       "add_role": {
         "enabled": false,
         "role": "default"
