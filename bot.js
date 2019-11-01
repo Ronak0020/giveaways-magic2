@@ -25,7 +25,7 @@ antispam(bot);
 //welcome message
 if (config.welcome.enabled) {
   logger.info("Welcome message enabled");
-  bot.on("guildMemberAdd", (member) => {
+  bot.on("guildMemberAdd", member => {
     var welcometxt = config.welcome.message;
     welcometxt = welcometxt.replace('{server}', member.guild.name);
     welcometxt = welcometxt.replace('{user}', member.user.username);
@@ -37,7 +37,9 @@ if (config.welcome.enabled) {
         logger.error("Unable to add user to role: " + config.welcome.add_role.role);
       }
     }
-  	member.guild.defaultChannel.send(welcometxt);
+        const channel = member.guild.channels.find(ch => ch.name === 'general');
+	if(!channel) return;
+  	channel.send(welcometxt);
   });
 }
 
