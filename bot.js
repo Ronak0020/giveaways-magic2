@@ -17,16 +17,7 @@ bot.on('ready', () => {
   require('./init_commands.js').init();
   logger.info("Logged in! Serving in " + bot.guilds.array().length + " servers");
   logger.info(config.prefix + "help to view a list of commands");
-  let statuses = [
-    `⚡${bot.users.size} users⚡`,
-    'My owner Ron!',
-    '.help'
-]
-    setInterval(function() {
-    let status = statuses[Math.floor(Math.random() * statuses.length)];
-    bot.user.setActivity(status, {type: "WATCHING"});
-}, 3000)
-});
+ });
 
 antispam(bot);
 
