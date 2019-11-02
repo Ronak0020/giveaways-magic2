@@ -10,6 +10,7 @@ exports.commands = [
 
 exports.youtube = {
   usage: "<query>",
+  description: "Search for a video on YouTube!",
   process: function (bot, msg, suffix) {
     youTube.search(suffix, 1, function(error, result) {
     if (error) {
