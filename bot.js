@@ -19,7 +19,7 @@ bot.on('ready', () => {
   logger.info(config.prefix + "help to view a list of commands");
  });
 bot.on('ready', () => {
- bot.user.setActivity('Ronak', { type: 'WATCHING' });
+ bot.user.setGame('Ronak', { type: 'WATCHING' });
 });
 
 antispam(bot);
