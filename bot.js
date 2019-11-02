@@ -14,11 +14,13 @@ var logger = log4js.getLogger();
 logger.level = 'debug';
 
 bot.on('ready', () => {
-  bot.user.setPresence('Giveaways Magic', {type: 'WATCHING'});
   require('./init_commands.js').init();
   logger.info("Logged in! Serving in " + bot.guilds.array().length + " servers");
   logger.info(config.prefix + "help to view a list of commands");
  });
+bot.on('ready', () => {
+ bot.user.setActivity('Ronak', { type: 'WATCHING' });
+});
 
 antispam(bot);
 
@@ -28,7 +30,7 @@ if (config.welcome.enabled) {
   bot.on("guildMemberAdd", member => {
     var welcometxt = config.welcome.message;
     welcometxt = welcometxt.replace('{server}', member.guild.name);
-    welcometxt = welcometxt.replace('{user}', member.user.username);
+    welcometxt = welcometxt.replace('{user}', member.user);
     if (config.welcome.add_role.enabled) { //Add to role if set in config.
       var role = member.guild.roles.find("name", config.welcome.add_role.role);
       if (role) {
